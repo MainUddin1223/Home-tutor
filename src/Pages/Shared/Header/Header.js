@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark sticky-top">
   <Container>
   <Navbar.Brand as={Link} to ="/" className='bg-primary' href="#home">Home Tutor</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features">Services</Nav.Link>
+      <Nav.Link href="#services">Services</Nav.Link>
       <Nav.Link href="#pricing">Feedback</Nav.Link>
-      <Nav.Link href="#pricing">Blogs</Nav.Link>
+      <Nav.Link href="#blogs">Blogs</Nav.Link>
       
     </Nav>
     <Nav>

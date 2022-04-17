@@ -2,7 +2,16 @@
     width: 80%;
    margin: auto;
    min-height: 700px;
+   transition: .5s;
+}
+.service-card:hover{
+    box-shadow: 0 0 50px #ccc;
+
 }
 .service-img{
     max-height: 250px;
+}
+.check-icon{
+    color: rgb(26, 133, 26);
+    margin: 0 5px;
 }

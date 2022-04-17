@@ -1,23 +1,22 @@
 import React from 'react';
-import { Button,Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import './FeedbackItem.css'
 
-const FeedbackItem = ({feedback}) => {
-    const {img,name,fedback}=feedback;
-    return (
-        <div>
-            <img src={img} alt="omg" />
-           {/* <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={img} />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-  </Card.Body>
-</Card> */}
-        </div>
-    );
+const FeedbackItem = ({ feedback }) => {
+  const { img, name, comment } = feedback;
+  return (
+    <div>
+      <Card className=" feedback-container" style={{ width: '18rem' }}>
+        <img className='feedback-img' src={img} alt="" />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            {comment}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 export default FeedbackItem;

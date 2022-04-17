@@ -22,11 +22,11 @@ const Service = ({ service }) => {
                     <h4>You can learn</h4>
                     {
                         topics.map(topic=><p>
-                            <FontAwesomeIcon icon={faSquareCheck} />
+                            <FontAwesomeIcon className='check-icon' icon={faSquareCheck} />
                             {topic}</p>)
                     }
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">Purchase Now</Button>
             </Card.Body>
         </Card>
     );

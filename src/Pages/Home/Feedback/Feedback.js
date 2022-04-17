@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
+import './Feedback.css'
 
 const Feedback = () => {
     const [feedbacks,setFeedbacks]=useState([]);
@@ -12,10 +13,12 @@ const Feedback = () => {
     console.log(feedbacks);
     return (
         <div>
-            <h1>Feedback</h1>
+            <h1 className='text-center my-4'>Feedback</h1>
+            <div className="feedback-container">
             {
                 feedbacks.map(feedback=><FeedbackItem key={feedback.id} feedback={feedback}></FeedbackItem>)
             }
+            </div>
         </div>
     );
 };
