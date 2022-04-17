@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/dkWrW2w/feedback2.jpg",
+        "name": "Mark Wood",
+        "feedback": "Great job.I was used to looking for such a tutor like you."
+    },
+    {
+        "id": 2,
+        "img": " https://i.ibb.co/mBwbs8W/feedback3.jpg",
+        "name": "Jesmin Alena",
+        "feedback": "Nice decorated course.It helps a lot to my daughter's study"
+    },
+    {
+        "img": " https://i.ibb.co/SX7jMt0/feedback4.jpg",
+        "name": "Angolina Mike",
+        "feedback": "Only genius tutor can deliver such a course.Best wishes for you"
+    }
+]

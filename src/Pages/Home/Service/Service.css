@@ -1,0 +1,8 @@
+.service-card{
+    width: 80%;
+   margin: auto;
+   min-height: 700px;
+}
+.service-img{
+    max-height: 250px;
+}

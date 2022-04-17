@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name":" Basic Course",
+        "price":1200,
+        "img":"https://i.ibb.co/rdNpYS4/service1.jpg",
+        "description":"This is basic course.In this course you can learn 4 topics",
+        "topics":["Vector","Metrics","Boolean Theorem","Simpson's rule"]
+    },
+    {
+        "id":2,
+        "name":" Basic Course",
+        "price":1300,
+        "img":"https://i.ibb.co/x7q1tJ8/service2.jpg",
+        "description":"This is basic course.In this course you can learn 4 topics",
+        "topics":["Laws of logarithms and exponents.","Differential Calculous","Metrics","Boolean Theorem"]
+    },
+    {
+        "id":3,
+        "name":" Basic  Course",
+        "price":1500,
+        "img":"https://i.ibb.co/XVgSHr0/service3.jpg",
+        "description":"This is basic course.In this course you can learn 3 topics",
+        "topics":["Trigonometric expressions","Number theory","Boolean Theorem"]},
+    {
+        "id":4,
+        "name":" Advance Course",
+        "price":2000,
+        "img":"https://i.ibb.co/c6L0yJh/service4.jpg",
+        "description":"This is Advance course.In this course you can learn 4 topics",
+        "topics":["Integral Calculous","Multi Variable","Metrics","Boolean Theorem"]
+    },
+    {
+        "id":5,
+        "name":" Advance Course",
+        "price":1000,
+        "img":"https://i.ibb.co/rFLNSHb/service5.jpg",
+        "description":"This is Advance course.In this course you can learn 3 topics",
+        "topics":["Rectangle method","Trapezoidal rule","Simpson's rule"]
+    },
+    {
+        "id":1,
+        "name":" Advance Course",
+        "price":1000,
+        "img":"https://i.ibb.co/9pM029b/service6.jpg",
+        "description":"This is Advance course.In this course you can learn 4 topics",
+        "topics":["Integration","Differentiation","Sequences","Straight Lines"]
+    }
+
+     ]
