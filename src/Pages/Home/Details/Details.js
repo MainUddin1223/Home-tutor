@@ -13,12 +13,12 @@ const Details = () => {
         <div style={{ height: "80vh" }}>
             <h1 className='text-center text-success my-5'>Checkout</h1>
             <div className='input-container'>
-                <input className='input-detail' type="email" name="email" id="" placeholder='Your email' readOnly />
+                <input className='input-detail' type="email" name="email" id="" placeholder='Your email' required />
                 <div className='input-detail'>
-                    <input className='address-detail' type="text" placeholder='your address' />
-                    <input className='address-detail' type="text" placeholder='Phone Number' />
+                    <input className='address-detail' type="text" placeholder='your address' required/>
+                    <input className='address-detail' type="text" placeholder='Phone Number' required/>
                 </div>
-                <input className='input-detail' type="password" placeholder='Confirm password' />
+                <input className='input-detail' type="password" placeholder='Confirm password' required/>
             </div>
             <button onClick={handleCheckOut} className='btn btn-primary d-block mt-2 m-auto'>Confirm</button>
         </div>

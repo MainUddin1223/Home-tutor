@@ -11,7 +11,7 @@ const Feedback = () => {
      }
      ,[]);
     return (
-        <div style={{height:"80vh"}}>
+        <div style={{height:"110vh"}}>
             <h1 className='text-center my-4'>Feedback</h1>
             <div className="feedback-container">
             {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,34 +6,35 @@ import auth from '../../../firebase.init';
 import Social from '../../Shared/Social/Social';
 
 const Register = () => {
-    const navigate=useNavigate()
+
+    const navigate = useNavigate()
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
-    const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(auth);
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const registerHandler = (event) => {
-        sendEmailVerification()
-        event.preventDefault()       
+        event.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email,password)
+        createUserWithEmailAndPassword(email, password)
     }
-    if(user){
-       console.log(user);
-       navigate('/')
+    console.log(user);
+    let verified;
+    if (user?.user?.emailVerified ===false) {
+
+        verified = <p className='fs-5 text-danger'>Please check your email and verify</p>
     }
-    if(error){
+    if (user?.user?.emailVerified ===true){
+        navigate('/')
+    }
+    if (error) {
         console.log(error.message);
-    }
-    if(sending){
-        console.log('eyey');
     }
     return (
         <div>
@@ -56,7 +57,7 @@ const Register = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" placeholder="Confirm Password" required />
                 </Form.Group>
-                <p onClick={()=>sendEmailVerification()} className='fs-4 text-primary my-2' style={{cursor:"pointer"}}>Verify your email</p>
+                {verified}
                 <p>Already have an account????<Link to='/login' className='mx-2 text-decoration-none'>Login now</Link></p>
                 <Button onClick={registerHandler} variant="primary" type="submit">
                     Register

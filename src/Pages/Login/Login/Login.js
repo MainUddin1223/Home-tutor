@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,6 +17,14 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+
+    const SendPasswordReset = () => {
+      const [email, setEmail] = useState('');
+      setEmail(emailRef.current.value)
+      const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth,email);
+    }
+    
 
     const handleLogIn = (event) => {
         event.preventDefault()
@@ -52,6 +61,7 @@ const Login = () => {
                 <Button onClick={handleLogIn} variant="primary" type="submit">
                     Login
                 </Button>
+                <p onClick={()=>SendPasswordReset(email)}>Forget Password???</p>
             </Form>
             <Social></Social>
         </div>
