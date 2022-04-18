@@ -1,0 +1,36 @@
+.input-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input-detail {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 50px;
+    margin-top: 10px;
+
+
+}
+
+.address-detail {
+
+    width: 50%;
+    height: 50px;
+}
+@media only screen and (max-width:576px) {
+    .input-detail{
+        width: 100%;
+        height: 40px;
+    }
+    .address-detail {
+        height: 40px;
+    
+    
+    }
+}
+@media only screen and (min-width:577px) and (max-width:992px){
+    .input-detail{
+        width: 80%;
+    }
+}

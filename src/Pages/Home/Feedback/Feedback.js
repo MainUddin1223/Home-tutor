@@ -10,9 +10,8 @@ const Feedback = () => {
         .then(data=>setFeedbacks(data))
      }
      ,[]);
-    console.log(feedbacks);
     return (
-        <div>
+        <div style={{height:"80vh"}}>
             <h1 className='text-center my-4'>Feedback</h1>
             <div className="feedback-container">
             {
