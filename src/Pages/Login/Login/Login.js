@@ -1,16 +1,23 @@
+import { sendPasswordResetEmail } from 'firebase/auth';
 import React, { useRef, useState } from 'react';
-import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Social from '../../Shared/Social/Social';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const location = useLocation()
     const navigate = useNavigate()
-    const emailRef = useRef('')
-    const passwordRef = useRef('')
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+
+    }
+    const handlePassword = (event) => {
+        setPassword(event.target.value)
+    }
     const [
         signInWithEmailAndPassword,
         user,
@@ -18,18 +25,17 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-
-    const SendPasswordReset = () => {
-      const [email, setEmail] = useState('');
-      setEmail(emailRef.current.value)
-      const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth,email);
+    const handleRestPassword = (e) => {
+        e.preventDefault()
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                alert('check email')
+            })
     }
-    
+
 
     const handleLogIn = (event) => {
         event.preventDefault()
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password)
 
     }
@@ -49,19 +55,22 @@ const Login = () => {
             <Form className='w-50 m-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    <Form.Control onBlar={handlePassword} type="password" placeholder="Password" required />
                 </Form.Group>
                 {errorMessage}
                 <p>New to Home Tutor????<Link to='/register' className='mx-2 text-decoration-none'>Register now</Link></p>
                 <Button onClick={handleLogIn} variant="primary" type="submit">
                     Login
                 </Button>
-                <p onClick={()=>SendPasswordReset(email)}>Forget Password???</p>
+                <br />
+                <Button onClick={handleRestPassword} variant="primary" type="submit">
+                    Forget password
+                </Button>
             </Form>
             <Social></Social>
         </div>
